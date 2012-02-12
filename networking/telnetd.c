@@ -123,8 +123,10 @@
 # define TELCMDS
 # define TELOPTS
 #endif
-#include <arpa/telnet.h>
 
+#ifndef __BIONIC__
+#include <arpa/telnet.h>
+#endif
 
 struct tsession {
 	struct tsession *next;
